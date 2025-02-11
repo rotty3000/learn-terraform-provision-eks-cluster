@@ -1,4 +1,11 @@
-# Learn Terraform - Provision an EKS Cluster
+# Deploy Liferay to AWS EKS
 
-This repo is a companion repo to the [Provision an EKS Cluster tutorial](https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks), containing
-Terraform configuration files to provision an EKS cluster on AWS.
+```shell
+helm install -n nginx-system --create-namespace nginx-ingress-controller bitnami/nginx-ingress-controller
+```
+
+Get address
+```shell
+kubectl get svc -n nginx-system nginx-ingress-controller -o jsonpath='{ .status.loadBalancer.ingress[0].hostname }'
+```
+
