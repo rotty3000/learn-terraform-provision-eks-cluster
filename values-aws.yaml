@@ -1,3 +1,4 @@
+# DXP
 ingress:
   enabled: true
   className: ""
@@ -17,11 +18,6 @@ resources:
     memory: "4Gi"
 storage: 10Gi
 
-objectstorage:
-  internal:
-    ingress:
-      enabled: false
-
 startupProbe:
   httpGet:
     path: /c/portal/robots
@@ -29,3 +25,40 @@ startupProbe:
   failureThreshold: 60
   initialDelaySeconds: 20
   periodSeconds: 5
+
+# Database
+database:
+  internal:
+    resources:
+      limits:
+        cpu: "2000m"
+        memory: "2Gi"
+      requests:
+        cpu: "1000m"
+        memory: "1Gi"
+    storage: 1Gi
+
+# Object Storage
+objectstorage:
+  internal:
+    ingress:
+      enabled: false
+      limits:
+        cpu: "2000m"
+        memory: "2Gi"
+      requests:
+        cpu: "1000m"
+        memory: "1Gi"
+    storage: 1Gi
+
+# Search
+search:
+  internal:
+    resources:
+      limits:
+        cpu: "2000m"
+        memory: "2Gi"
+      requests:
+        cpu: "1000m"
+        memory: "1Gi"
+    storage: 1Gi
