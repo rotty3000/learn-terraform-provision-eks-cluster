@@ -1,7 +1,7 @@
 # DXP
 ingress:
   enabled: true
-  className: ""
+  className: "nginx"
   annotations: {}
   hosts:
     - host: ""
