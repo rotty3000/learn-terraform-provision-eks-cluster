@@ -61,4 +61,10 @@ search:
       requests:
         cpu: "1000m"
         memory: "1Gi"
+    startupProbe:
+      tcpSocket:
+        port: search
+      failureThreshold: 60
+      initialDelaySeconds: 20
+      periodSeconds: 5
     storage: 1Gi
