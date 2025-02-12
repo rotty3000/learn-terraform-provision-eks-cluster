@@ -16,7 +16,6 @@ resources:
   requests:
     cpu: "2000m"
     memory: "4Gi"
-storage: 10Gi
 
 startupProbe:
   httpGet:
@@ -25,6 +24,9 @@ startupProbe:
   failureThreshold: 60
   initialDelaySeconds: 20
   periodSeconds: 5
+
+storage: 10Gi
+storageClassName: gp2
 
 # Database
 database:
@@ -37,6 +39,7 @@ database:
         cpu: "1000m"
         memory: "1Gi"
     storage: 1Gi
+    storageClassName: gp2
 
 # Object Storage
 objectstorage:
@@ -50,6 +53,7 @@ objectstorage:
         cpu: "1000m"
         memory: "1Gi"
     storage: 1Gi
+    storageClassName: gp2
 
 # Search
 search:
@@ -68,3 +72,4 @@ search:
       initialDelaySeconds: 20
       periodSeconds: 5
     storage: 1Gi
+    storageClassName: gp2
