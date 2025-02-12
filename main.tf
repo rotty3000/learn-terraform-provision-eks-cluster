@@ -76,7 +76,7 @@ module "eks" {
     one = {
       name = "node-group-1"
 
-      instance_types = ["t3.xlarge"]
+      instance_types = ["t3.xlarge"] # 4vCPUs/16.0GiB
 
       min_size     = 1
       max_size     = 4

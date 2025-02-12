@@ -1,4 +1,4 @@
-# Deploy Liferay to AWS EKS
+# Deploy Liferay to EKS
 
 ### Login with your AWS account
 
@@ -10,6 +10,14 @@ _(you may have to set the default profile env variable)_
 
 ```shell
 export AWS_PROFILE=<aws_profile>
+```
+
+### Edit the `terraform.tfvars`
+
+Set the values you want in `terraform.tfvars`:
+
+```shell
+region     = "<region>"
 ```
 
 ### Init Terraform
