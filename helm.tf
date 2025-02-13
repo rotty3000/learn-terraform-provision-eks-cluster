@@ -48,7 +48,7 @@ resource "helm_release" "liferay" {
   namespace         = "liferay"
   repository        = "oci://ghcr.io/liferaycloud/liferay-helm-chart/charts"
   reuse_values      = true
-  version           = "0.1.32"
+  version           = "0.1.33"
 
   values = [
     file("${path.module}/values-aws.yaml")
